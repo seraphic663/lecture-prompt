@@ -1,0 +1,1 @@
+### Just a repo saving prompts to help agents respond better.
