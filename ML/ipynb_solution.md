@@ -14,21 +14,23 @@ Use this when creating or rebuilding a notebook solution for a machine-learning 
 1. Read the assignment statement and list required tasks/functions.
 2. Read the starter script and preserve function names, signatures, return values, and required testing flow.
 3. Do not add forbidden dependencies.
-4. Choose notebook style:
-   - Teaching notebook: more explanation and shape notes.
-   - Submission notebook: shorter explanations and executable correctness.
+4. Choose the requested solution mode. The user may not use the exact labels; infer the intended mode from wording:
+   - Concise Mode: for users with some foundation, exam review, quick completion, or submission-focused work. Use shorter markdown, essential formulas, core shape notes, and executable correctness.
+   - Detailed Mode: for zero-foundation or beginner-friendly explanations. Add background notes, definitions, shape reasoning, and step-by-step derivations before code.
+   - If no mode is specified or the request is ambiguous, generate both a concise/submission version and a detailed/teaching version.
 5. Organize cells in the same order as the lab tasks.
-6. Put short markdown before code cells explaining the objective, formula, shapes, and expected output.
+6. Put short markdown before code cells explaining the objective, formula, shapes, and expected output according to the selected mode.
 7. End with a full testing cell that reproduces the starter script outputs.
 8. Run all cells if possible; otherwise validate extracted code with a script or syntax check.
 
 ## Output
 
-Produce one or more of:
+Produce one or more of the following, depending on the requested mode:
 
-- `<LAB_DIR>/<lab>_teaching_notebook.ipynb`
-- `<LAB_DIR>/rebuild_<lab>_teaching_notebook.py`
-- Updated result files or figures, if requested
+- Single requested Concise Mode: `<LAB_DIR>/<lab>_solution.ipynb` and, if useful, `<LAB_DIR>/rebuild_<lab>_solution.py`.
+- Single requested Detailed Mode: `<LAB_DIR>/<lab>_solution.ipynb` and, if useful, `<LAB_DIR>/rebuild_<lab>_solution.py`.
+- No clear mode or both requested: `<LAB_DIR>/<lab>_solution_concise.ipynb`, `<LAB_DIR>/<lab>_solution_detailed.ipynb`, and matching rebuild scripts if used.
+- Updated result files or figures, if requested.
 
 If a rebuild script exists, prefer updating it so the notebook can be regenerated.
 
@@ -58,5 +60,14 @@ Do not stop solely because one item is unclear. Stop only when the task cannot b
 - Random seeds are fixed when needed.
 - No local absolute paths are required.
 - Figures and printed metrics are produced when expected.
+
+
+
+
+
+
+
+
+
 
 

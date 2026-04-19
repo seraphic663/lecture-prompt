@@ -12,7 +12,9 @@ Do not modify the original homework Markdown file.
 
 ## Output File Naming
 
-Create a new solution file named:
+The output depends on the requested solution mode.
+
+If the user clearly requests one mode, create exactly one solution file:
 
 ```text
 <root>_solution.md
@@ -20,14 +22,60 @@ Create a new solution file named:
 
 Examples:
 
-- If the homework file is `5.md`, write `5_solution.md`.
-- If the homework file is `6.md`, write `6_solution.md`.
+- If the homework file is `5.md` and the user asks for concise solutions, write `5_solution.md`.
+- If the homework file is `6.md` and the user asks for detailed solutions, write `6_solution.md`.
 
-Do not name the output file after this prompt file.
+If the user does not specify a mode clearly, create both versions:
+
+```text
+<root>_solution_concise.md
+<root>_solution_detailed.md
+```
+
+Do not name any output file after this prompt file.
+
+## Solution Modes
+
+The user must indicate the desired mode, but they may not use the exact labels below. Infer the intended mode from meaning, tone, and wording.
+
+### Concise Mode
+
+Use this mode when the user asks for a concise, compact, quick, exam-review, answer-only, or "I already know the basics" version.
+
+Audience: students with some foundation who mainly need the key reasoning and final answers.
+
+Write with these constraints:
+
+- Keep explanations short and focused on the necessary derivation.
+- Skip broad background knowledge unless it is directly needed to avoid a mistake.
+- Show essential formulas, intermediate values, and final answers.
+- Prefer tables and compact calculation blocks.
+- Do not include long conceptual introductions.
+
+### Detailed Mode
+
+Use this mode when the user asks for a detailed, beginner-friendly, zero-foundation, step-by-step, explanatory, or background-heavy version.
+
+Audience: students who may not know the prerequisite concepts and need the reasoning built from basics.
+
+Write with these constraints:
+
+- Explain the relevant background concept before using it.
+- Define important terms, symbols, and units when they first appear.
+- Show each calculation step and why it is valid.
+- Use small examples, diagrams, or tables when they clarify the reasoning.
+- Still avoid irrelevant textbook exposition that does not help solve the current problem.
+
+### Mode Selection Rule
+
+- If the user clearly requests Concise Mode, generate only the concise version.
+- If the user clearly requests Detailed Mode, generate only the detailed version.
+- If the user does not specify a mode, or the request is ambiguous, generate both versions using the two-file naming scheme above.
+- If the user asks for both, generate both versions.
 
 ## Writing Goal
 
-Write a complete, careful, and self-contained solution for every problem in the homework Markdown file.
+Write a complete, careful, and self-contained solution for every problem in the homework Markdown file, following the selected solution mode.
 
 The solution should be detailed enough for a student to understand the reasoning from scratch, but it should stay focused on the actual problem. Prefer precise calculations and clear tables over long generic explanations.
 
@@ -172,5 +220,7 @@ Do not stop solely because one item is unclear. Stop only when the task cannot b
 The goal is to produce solutions, not to reformat the original problem set.
 
 The original Markdown file is the source of problem statements. The new `<root>_solution.md` file is the only file that should contain answers.
+
+
 
 
