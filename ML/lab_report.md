@@ -1,4 +1,4 @@
-# Prompt: Write a Machine Learning Lab Report
+﻿# Prompt: Write a Machine Learning Lab Report
 
 Use this when writing a concise report for a machine-learning lab.
 
@@ -44,6 +44,24 @@ For tuning, if `tuning_result.txt` exists:
 - Add: `Full tables are saved in tuning_result.txt.`
 - If test metrics are used for tuning, note that a strict pipeline should use validation data.
 
+## Error Reporting
+
+If you run into missing files, unreadable content, OCR uncertainty, failed commands, missing dependencies, permission issues, or any other blocker, first try to continue with a reasonable fallback and complete as much of the requested output as possible.
+
+Create or update a short issue report named `issues.md` in the working/output directory. Keep it concise and actionable:
+
+```md
+# Issues
+
+- Context: <file, problem, slide, cell, command, or task>
+  Problem: <what went wrong>
+  Impact: <what part of the output may be incomplete or uncertain>
+  Fallback: <what you did to continue>
+  Needs user: <yes/no; what input is needed if yes>
+```
+
+Do not stop solely because one item is unclear. Stop only when the task cannot be completed safely or the missing information makes the whole output unreliable.
+
 ## Checklist
 
 - `report.tex` exists in the lab directory.
@@ -59,3 +77,5 @@ For tuning, if `tuning_result.txt` exists:
 - Do not add large tables.
 - Do not over-explain basic concepts.
 - Do not claim a finite-grid best setting is theoretically optimal.
+
+

@@ -1,4 +1,4 @@
-# Prompt: Build a Machine Learning Notebook Solution
+﻿# Prompt: Build a Machine Learning Notebook Solution
 
 Use this when creating or rebuilding a notebook solution for a machine-learning lab or homework.
 
@@ -32,6 +32,24 @@ Produce one or more of:
 
 If a rebuild script exists, prefer updating it so the notebook can be regenerated.
 
+## Error Reporting
+
+If you run into missing files, unreadable content, OCR uncertainty, failed commands, missing dependencies, permission issues, or any other blocker, first try to continue with a reasonable fallback and complete as much of the requested output as possible.
+
+Create or update a short issue report named `issues.md` in the working/output directory. Keep it concise and actionable:
+
+```md
+# Issues
+
+- Context: <file, problem, slide, cell, command, or task>
+  Problem: <what went wrong>
+  Impact: <what part of the output may be incomplete or uncertain>
+  Fallback: <what you did to continue>
+  Needs user: <yes/no; what input is needed if yes>
+```
+
+Do not stop solely because one item is unclear. Stop only when the task cannot be completed safely or the missing information makes the whole output unreliable.
+
 ## Checklist
 
 - All required functions are present.
@@ -40,3 +58,5 @@ If a rebuild script exists, prefer updating it so the notebook can be regenerate
 - Random seeds are fixed when needed.
 - No local absolute paths are required.
 - Figures and printed metrics are produced when expected.
+
+

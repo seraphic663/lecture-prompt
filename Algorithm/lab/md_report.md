@@ -1,4 +1,4 @@
-# Prompt: Write a Machine Learning Homework Technical Report
+﻿# Prompt: Write a Machine Learning Homework Technical Report
 
 Use this when a homework PDF asks for a short technical report that may depend on lab PDFs, lecture PDFs, scripts, or previous lab reports.
 
@@ -43,6 +43,24 @@ For algorithm-design questions:
 - Provide a practical algorithm and update rule.
 - State the stopping criterion and final selected output.
 
+## Error Reporting
+
+If you run into missing files, unreadable content, OCR uncertainty, failed commands, missing dependencies, permission issues, or any other blocker, first try to continue with a reasonable fallback and complete as much of the requested output as possible.
+
+Create or update a short issue report named `issues.md` in the working/output directory. Keep it concise and actionable:
+
+```md
+# Issues
+
+- Context: <file, problem, slide, cell, command, or task>
+  Problem: <what went wrong>
+  Impact: <what part of the output may be incomplete or uncertain>
+  Fallback: <what you did to continue>
+  Needs user: <yes/no; what input is needed if yes>
+```
+
+Do not stop solely because one item is unclear. Stop only when the task cannot be completed safely or the missing information makes the whole output unreliable.
+
 ## Checklist
 
 - Every question in the homework PDF is answered.
@@ -50,3 +68,5 @@ For algorithm-design questions:
 - No template placeholders remain.
 - Required scripts/reports/results are present if submission includes programming.
 - The final package has a short README or manifest if requested.
+
+

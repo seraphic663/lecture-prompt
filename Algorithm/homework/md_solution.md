@@ -1,4 +1,4 @@
-# Prompt: Write Complete Solutions from a Homework Markdown File
+﻿# Prompt: Write Complete Solutions from a Homework Markdown File
 
 You are given a Markdown homework file that contains algorithm problems. The file may use the following structure:
 
@@ -98,8 +98,28 @@ You may adjust section names when the problem type requires it, but keep the sol
 - Avoid unnecessary background unrelated to the problem.
 - Keep the final answer suitable for submission or study notes.
 
+## Error Reporting
+
+If you run into missing files, unreadable content, OCR uncertainty, failed commands, missing dependencies, permission issues, or any other blocker, first try to continue with a reasonable fallback and complete as much of the requested output as possible.
+
+Create or update a short issue report named `issues.md` in the working/output directory. Keep it concise and actionable:
+
+```md
+# Issues
+
+- Context: <file, problem, slide, cell, command, or task>
+  Problem: <what went wrong>
+  Impact: <what part of the output may be incomplete or uncertain>
+  Fallback: <what you did to continue>
+  Needs user: <yes/no; what input is needed if yes>
+```
+
+Do not stop solely because one item is unclear. Stop only when the task cannot be completed safely or the missing information makes the whole output unreliable.
+
 ## Important
 
 The goal is to produce solutions, not to reformat the original problem set.
 
 The original Markdown file is the source of problem statements. The new `<root>_solution.md` file is the only file that should contain answers.
+
+
