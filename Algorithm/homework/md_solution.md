@@ -96,34 +96,30 @@ When reference material is provided, follow its style:
 
 ## Required Structure
 
-Use this general structure:
+Use this general structure. The solution file should include the original problem statement before the answer, and the only Markdown headings below the title should be the second-level problem headings.
 
 ```md
 # <root> Homework Solutions
 
 ## <problem-number>
 
-### Idea
+<full problem statement copied from the source homework file>
 
-...
-
-### Algorithm / Proof / Analysis
-
-...
-
-### Conclusion
+**解答**
 
 ...
 ```
 
-You may adjust section names when the problem type requires it, but keep the solution organized and easy to scan.
+Do not use third-level headings such as `### Idea`, `### Analysis`, `### Proof`, or `### Conclusion`. If the solution needs internal organization, use bold inline labels such as `**思路**`, `**证明**`, `**复杂度**`, `**a.**`, `**b.**`, etc., without creating additional Markdown headings.
 
 ## Rules
 
 - Do not edit the original problem file.
+- Copy the full problem statement for each problem from the source homework file before writing its solution.
 - Do not copy `<enter you answer>` into the solution file.
 - Do not leave placeholders.
 - Do not skip any problem.
+- Use exactly one second-level heading `## <problem-number>` for each problem; do not create lower-level Markdown headings inside a problem section.
 - Keep problems in sorted problem-number order.
 - For a problem number of the form `a.b-c`, sort by numeric `a`, then numeric `b`, then numeric `c`.
 - For a problem number of the form `a.d`, place it after all `a.b-c` problems with the same leading `a`, but before any `(a+1).b-c` problems.
@@ -166,9 +162,13 @@ Do not stop solely because one item is unclear. Stop only when the task cannot b
 
 ## Important
 
-The goal is to produce solutions, not to reformat the original problem set.
+The goal is to produce a self-contained solution file: each problem section should repeat the original problem statement and then give the solution.
 
 The original Markdown file is the source of problem statements. The new `<root>_solution.md` file is the only file that should contain answers.
+
+
+
+
 
 
 
