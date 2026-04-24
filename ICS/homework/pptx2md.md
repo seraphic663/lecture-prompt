@@ -31,6 +31,8 @@ If the PPT contains question images that are hard to extract or fully transcribe
 - Example: the first image for Problem 2 should be `2.1.png`.
 
 Store these images in a folder in the working/output directory so the generated Markdown and the image assets stay together.
+Do not scatter extracted images, reference images, OCR snapshots, or temporary slide-image exports in the root homework directory.
+If image extraction or inspection requires intermediate files, place them in a dedicated folder such as `problem_images/` or another clearly named subfolder instead of the root.
 
 The appended image-based version is a full extra pass, not a partial note. It should remain in the generated Markdown unless the user later explicitly removes it. Do not assume it should be reverted after confirmation.
 
@@ -136,6 +138,7 @@ Do not stop solely because one item is unclear. Stop only when the task cannot b
 - The final `<root>.md` file should be ready for the solution prompt to consume.
 - Do not skip saving problem images just because partial OCR text was available.
 - Do not treat the appended `利用原图的题目整理` section as optional when relevant source images exist.
+- Do not leave extracted or temporary images scattered in the root homework directory; keep them inside a dedicated image folder.
 
 ## Completion Checklist
 
@@ -146,6 +149,7 @@ Before finishing, verify that:
 - Relevant nearby PDF or PPT/PPTX study materials were checked first, and the user was told which ones seem relevant.
 - All important slide images have been transcribed when they contain problem data.
 - Difficult image-based problem content has been saved into the per-problem image folder with `a.b.png` names.
+- No extracted or temporary slide images are left scattered in the root homework directory.
 - Each problem has a clear `**Answer**` placeholder or follows the existing local style.
 - The end of `<root>.md` includes a complete `利用原图的题目整理` section based directly on the saved source images.
 - No detailed solution text has been added.
