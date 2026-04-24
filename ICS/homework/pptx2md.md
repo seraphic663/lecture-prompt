@@ -88,6 +88,7 @@ If the local course style uses only `## Problem n` without a top-level title, fo
 ## Formatting Rules
 
 - Write in the same language as the original homework. For bilingual ICS slides, Chinese explanations with preserved English technical terms are acceptable.
+- If you create `issues.md`, write it in the same language as the homework or the user's current instruction language unless the user explicitly asks otherwise.
 - Preserve technical terms such as `virtual address`, `VPN`, `VPO`, `TLB`, `PTE`, `PDE`, `cache hit`, `page fault`, `segmentation`, `kernel mode`, and `user mode`.
 - Use fenced code blocks for code and specify the language when clear:
 
@@ -114,13 +115,13 @@ If you run into missing files, unreadable content, OCR uncertainty, failed comma
 Create or update a short issue report named `issues.md` in the working/output directory. Keep it concise and actionable:
 
 ```md
-# Issues
+# 问题记录
 
-- Context: <file, problem, slide, cell, command, or task>
-  Problem: <what went wrong>
-  Impact: <what part of the output may be incomplete or uncertain>
-  Fallback: <what you did to continue>
-  Needs user: <yes/no; what input is needed if yes>
+- 背景：<文件、题目、页码、单元格、命令或任务>
+  问题：<出了什么问题>
+  影响：<输出的哪一部分可能不完整或不确定>
+  处理：<为了继续完成任务，采取了什么回退方案>
+  需要用户：<是/否；如果是，需要用户补充什么>
 ```
 
 Do not stop solely because one item is unclear. Stop only when the task cannot be completed safely or the missing information makes the whole output unreliable.
