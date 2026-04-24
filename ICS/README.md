@@ -16,11 +16,13 @@ Reusable prompts for ICS / ICS II homework workflows.
 
 ## Homework Workflow
 
-1. Use `homework/pptx2md.md` to convert `homework<root>.pptx` into `<root>.md`.
-2. If the PPT contains question images that are hard to convert cleanly, save them into a dedicated image folder using `a.b.png` naming, where `a` is the problem number and `b` is the image index within that problem.
-3. Review the generated problem Markdown, especially any content transcribed from images.
-4. Ensure the end of `<root>.md` includes an extra section titled `利用原图的题目整理`, which reorganizes the problems using the saved source images as reference.
-5. Use `homework/md_solution.md` to generate solution files from `<root>.md`.
+1. Before conversion, check whether the homework directory or nearby course folders contain relevant PDF or PPT/PPTX materials, and prioritize reading them first.
+2. Briefly tell the user which lecture notes, slides, or textbook content appear relevant to the current homework.
+3. Use `homework/pptx2md.md` to convert `homework<root>.pptx` into `<root>.md`.
+4. If the PPT contains question images that are hard to convert cleanly, save them into a dedicated image folder using `a.b.png` naming, where `a` is the problem number and `b` is the image index within that problem.
+5. Review the generated problem Markdown, especially any content transcribed from images.
+6. Ensure the end of `<root>.md` includes an extra section titled `利用原图的题目整理`, which is a complete image-based reorganization of the problems and remains in place unless the user later explicitly removes it.
+7. Use `homework/md_solution.md` to generate solution files from `<root>.md`.
 
 ## Solution Modes
 

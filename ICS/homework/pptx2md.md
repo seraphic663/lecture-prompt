@@ -9,6 +9,7 @@ Do not solve any problem.
 - One PPTX file, such as `homework5.pptx`.
 - Optional previous homework Markdown files, such as `3.md`, `3_solution.md`, or earlier converted homework files.
 - Optional extracted images from the PPTX, if slides store tables or figures as images.
+- Optional PDF or PPT/PPTX course materials in the same working directory, parent directory, or nearby course-material folders.
 
 ## Output File Naming
 
@@ -30,6 +31,8 @@ If the PPT contains question images that are hard to extract or fully transcribe
 - Example: the first image for Problem 2 should be `2.1.png`.
 
 Store these images in a folder in the working/output directory so the generated Markdown and the image assets stay together.
+
+The appended image-based version is a full extra pass, not a partial note. It should remain in the generated Markdown unless the user later explicitly removes it. Do not assume it should be reverted after confirmation.
 
 ## Required Markdown Format
 
@@ -61,8 +64,10 @@ If the local course style uses only `## Problem n` without a top-level title, fo
 
 1. Inspect the current directory and identify the target PPTX file.
 2. Infer the homework number from the PPTX name, directory name, or user instruction.
-3. Check nearby homework Markdown files to learn the expected style, especially heading level, answer placeholder, language, and table format.
-4. Extract all visible slide content:
+3. Look for nearby PDF or PPT/PPTX learning materials and prioritize reading the ones most relevant to the homework topic before conversion.
+4. Briefly report which lecture notes, slides, or textbook sections appear relevant to this homework, so the user knows what background material is being used.
+5. Check nearby homework Markdown files to learn the expected style, especially heading level, answer placeholder, language, and table format.
+6. Extract all visible slide content:
    - ordinary text,
    - problem statements,
    - code snippets,
@@ -71,13 +76,14 @@ If the local course style uses only `## Problem n` without a top-level title, fo
    - address bit diagrams,
    - memory dumps,
    - TLB, page table, cache, or register tables.
-5. If a slide stores important content as an image, inspect the image and transcribe the meaningful content into Markdown. Do not replace required data with a bare image reference.
-6. When an image is difficult to extract cleanly into Markdown, save the original question image into the per-problem image folder using the `a.b.png` naming rule.
-7. Preserve all problem numbers and subproblem labels.
-8. Preserve blanks in tables that students are expected to fill.
-9. Add the `**Answer**` placeholder after each problem unless the local file style clearly differs.
-10. At the end of `<root>.md`, append an extra section titled `利用原图的题目整理`, using the saved original images to produce one more cleaned problem transcription pass.
-11. Do not include solution reasoning in the problem Markdown file.
+7. If a slide stores important content as an image, inspect the image and transcribe the meaningful content into Markdown. Do not replace required data with a bare image reference.
+8. When an image is difficult to extract cleanly into Markdown, save the original question image into the per-problem image folder using the `a.b.png` naming rule.
+9. Preserve all problem numbers and subproblem labels.
+10. Preserve blanks in tables that students are expected to fill.
+11. Add the `**Answer**` placeholder after each problem unless the local file style clearly differs.
+12. At the end of `<root>.md`, append an extra section titled `利用原图的题目整理`, using the saved original images to produce one more complete and faithful problem transcription pass.
+13. In that appended section, reorganize the problems directly from the saved source images, even if this repeats earlier content. The goal is completeness and fidelity to the original question images.
+14. Do not include solution reasoning in the problem Markdown file.
 
 ## Formatting Rules
 
@@ -99,6 +105,7 @@ int main(void) {
 - For address-format diagrams, either use a Markdown table or a compact text diagram.
 - If a detail is genuinely unreadable after inspection, mark it as `[unclear]` rather than guessing.
 - If the same problem has both slide text and saved source images, prefer a faithful merged result. The appended `利用原图的题目整理` section should explicitly rely on the saved images when they clarify OCR or layout ambiguities.
+- When nearby PDF or PPT/PPTX course materials exist, prefer primary course materials first, then textbook-style references. Use them to identify relevant concepts, terminology, and likely topic coverage, but do not let them overwrite the actual homework wording.
 
 ## Error Reporting
 
@@ -127,6 +134,7 @@ Do not stop solely because one item is unclear. Stop only when the task cannot b
 - Do not overwrite previous homework files unless the user explicitly asks.
 - The final `<root>.md` file should be ready for the solution prompt to consume.
 - Do not skip saving problem images just because partial OCR text was available.
+- Do not treat the appended `利用原图的题目整理` section as optional when relevant source images exist.
 
 ## Completion Checklist
 
@@ -134,10 +142,11 @@ Before finishing, verify that:
 
 - The output file is named `<root>.md`.
 - Every problem in the PPTX appears in the Markdown file.
+- Relevant nearby PDF or PPT/PPTX study materials were checked first, and the user was told which ones seem relevant.
 - All important slide images have been transcribed when they contain problem data.
 - Difficult image-based problem content has been saved into the per-problem image folder with `a.b.png` names.
 - Each problem has a clear `**Answer**` placeholder or follows the existing local style.
-- The end of `<root>.md` includes a `利用原图的题目整理` section.
+- The end of `<root>.md` includes a complete `利用原图的题目整理` section based directly on the saved source images.
 - No detailed solution text has been added.
 
 
