@@ -1,4 +1,4 @@
-﻿# Lecture Prompt Repository
+# Lecture Prompt Repository
 
 Reusable prompt files for coursework workflows. These prompts are written for an AI assistant that can inspect local files, transcribe materials, generate Markdown/LaTeX/notebooks, and report issues when a task cannot be completed perfectly.
 
@@ -7,16 +7,16 @@ Reusable prompt files for coursework workflows. These prompts are written for an
 - `Algorithm/`: Algorithm homework and lab prompts.
 - `ICS/`: ICS and ICS II homework prompts.
 - `ML/`: Machine-learning lab, homework-report, and notebook prompts.
-- `Optimization/`: Reserved for optimization-course prompts; current files are placeholders unless populated.
+- `Optimization/`: Optimization-course prompts for PDF-to-LaTeX reconstruction and separate LaTeX solution generation.
 
 ## Common Workflow Pattern
 
 Most prompt packs follow a two-step flow:
 
-1. Convert source material into a clean problem/task file, such as screenshots or PPTX into `<root>.md`.
+1. Convert source material into a clean problem/task file, such as screenshots or PPTX into `<root>.md`, or PDF into `<root>.tex`.
 2. Generate a separate solution/report/notebook file from that cleaned source.
 
-Do not write answers into the original problem Markdown unless a specific prompt says so.
+Do not write answers into the original problem file unless a specific prompt says so.
 
 ## Solution Modes
 
