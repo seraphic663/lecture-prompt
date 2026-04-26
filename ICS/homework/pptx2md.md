@@ -84,8 +84,10 @@ If the local course style uses only `## Problem n` without a top-level title, fo
 10. Preserve blanks in tables that students are expected to fill.
 11. Add the `**Answer**` placeholder after each problem unless the local file style clearly differs.
 12. At the end of `<root>.md`, append an extra section titled `利用原图的题目整理`, using the saved original images to produce one more complete and faithful problem transcription pass.
-13. In that appended section, reorganize the problems directly from the saved source images, even if this repeats earlier content. The goal is completeness and fidelity to the original question images.
-14. Do not include solution reasoning in the problem Markdown file.
+13. If a saved original image already contains the full problem clearly, prefer embedding that image directly in `利用原图的题目整理` instead of rewriting the image content into prose.
+14. Only when the original image is incomplete, unclear, or split across multiple images should you do a minimal image-based reconstruction in text.
+15. In `利用原图的题目整理`, do not add explanatory commentary such as "根据题图", "可整理为", "题目要求", or other narrative bridge text. Write only the original problem content itself, preferably by direct image inclusion or otherwise by minimal reconstruction from the image.
+16. Do not include solution reasoning in the problem Markdown file.
 
 ## Formatting Rules
 
@@ -108,6 +110,7 @@ int main(void) {
 - For address-format diagrams, either use a Markdown table or a compact text diagram.
 - If a detail is genuinely unreadable after inspection, mark it as `[unclear]` rather than guessing.
 - If the same problem has both slide text and saved source images, prefer a faithful merged result. The appended `利用原图的题目整理` section should explicitly rely on the saved images when they clarify OCR or layout ambiguities.
+- In `利用原图的题目整理`, prefer direct image inclusion first. If text reconstruction is necessary, keep it minimal and faithful. Avoid adding your own summary phrases, teaching notes, or interpretive glue text.
 - When nearby PDF or PPT/PPTX course materials exist, prefer primary course materials first, then textbook-style references. Use them to identify relevant concepts, terminology, and likely topic coverage, but do not let them overwrite the actual homework wording.
 
 ## Error Reporting

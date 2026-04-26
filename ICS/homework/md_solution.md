@@ -17,13 +17,15 @@ The output depends on the requested solution mode.
 If the user clearly requests one mode, create exactly one solution file:
 
 ```text
-<root>_solution.md
+<root>_solution_concise.md
+or
+<root>_solution_detailed.md
 ```
 
 Examples:
 
-- If the homework file is `5.md` and the user asks for concise solutions, write `5_solution.md`.
-- If the homework file is `6.md` and the user asks for detailed solutions, write `6_solution.md`.
+- If the homework file is `5.md` and the user asks for concise solutions, write `5_solution_concise.md`.
+- If the homework file is `6.md` and the user asks for detailed solutions, write `6_solution_detailed.md`.
 
 If the user does not specify a mode clearly, create both versions:
 
@@ -61,6 +63,7 @@ Audience: students who may not know the prerequisite concepts and need the reaso
 Write with these constraints:
 
 - Explain the relevant background concept before using it.
+- For each problem or problem family, introduce the prerequisite concepts first, then solve the specific problem.
 - Define important terms, symbols, and units when they first appear.
 - Show each calculation step and why it is valid.
 - Use small examples, diagrams, or tables when they clarify the reasoning.
@@ -191,6 +194,7 @@ When solving two-level page table problems, show:
 ## Style Constraints
 
 - Prefer concise but complete derivations.
+- In Detailed Mode, it is acceptable to spend extra space on prerequisite concepts if that background is directly needed for a beginner to follow the later solution.
 - Avoid vague phrases such as "obvious" when a calculation is needed.
 - Keep hexadecimal arithmetic readable by showing intermediate values.
 - State final answers clearly under an `Answer` section.
@@ -219,7 +223,7 @@ Do not stop solely because one item is unclear. Stop only when the task cannot b
 
 The goal is to produce solutions, not to reformat the original problem set.
 
-The original Markdown file is the source of problem statements. The new `<root>_solution.md` file is the only file that should contain answers.
+The original Markdown file is the source of problem statements. The new solution file, such as `<root>_solution_concise.md` or `<root>_solution_detailed.md`, is the only file that should contain answers.
 
 
 

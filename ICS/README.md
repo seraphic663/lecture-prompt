@@ -33,7 +33,15 @@ Reusable prompts for ICS / ICS II homework workflows.
 
 The user may not use the exact mode labels. Infer intent from wording such as "简洁", "关键步骤", "复习版", "详细", "零基础", "小白", or "讲背景".
 
-If the user clearly asks for one mode, generate only one file named `<root>_solution.md`. If the user does not specify a mode, generate both:
+If the user clearly asks for one mode, generate only the matching file:
+
+```text
+<root>_solution_concise.md
+or
+<root>_solution_detailed.md
+```
+
+If the user does not specify a mode, generate both:
 
 ```text
 <root>_solution_concise.md
