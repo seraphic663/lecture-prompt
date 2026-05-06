@@ -25,13 +25,27 @@ Notebook explanations should be written mainly in Chinese, while keeping importa
 4. Treat the starter script as read-only unless the user explicitly asks for direct script modification.
 5. Choose the requested solution mode. The user may not use the exact labels; infer the intended mode from wording:
    - Concise Mode: for users with some foundation, review, quick completion, or submission-focused work. Use short markdown, essential formulas, core shape notes, and executable correctness.
-   - Detailed Mode: for beginner-friendly or teaching-focused work. Add background notes, definitions, shape reasoning, algorithmic intuition, and step-by-step derivations before code.
+   - Detailed Mode: for beginner-friendly or teaching-focused work. Build a lecture-style teaching notebook rather than a longer answer sheet. For each task, first restate the concrete assignment requirement and function contract, then explain why the method is needed, introduce the course concept, derive the formula or algorithm, map the formula to code variables and shapes, and finally explain expected outputs or figures.
    - If no mode is specified or the request is ambiguous, generate both a concise/submission version and a detailed/teaching version.
 6. Organize notebook cells in the same order as the lab tasks.
 7. Before each main code cell, add Chinese markdown explaining the objective, key formula, important shapes, and expected behavior. Keep important technical terms in English where appropriate.
 8. Implement the required functions inside the notebook while matching the starter script signatures and testing flow.
 9. End with a full testing cell that reproduces the starter script's intended execution path and saves expected figures or outputs.
 10. Run all cells if possible. If notebook execution is unavailable, validate the extracted code with a script or syntax check.
+
+## Detailed Mode Style
+
+Detailed Mode should feel like lecture notes built around the lab, not like a direct code answer. Do not start a task with abstract formulas before explaining the concrete task. A good detailed section usually follows this order:
+
+1. Task entry: what the lab asks, which function is implemented, and how it will be used later.
+2. Motivation: why the method is needed for this task and what problem it solves.
+3. Concept: the relevant course idea, explained in Chinese with important technical terms in English.
+4. Mathematical formulation: formulas and constraints, each tied to code variables.
+5. Algorithm: practical steps that will become code.
+6. Implementation mapping: shapes, function arguments, return values, numerical-stability choices, and edge cases.
+7. Expected observation: what to inspect in printed metrics or saved figures.
+
+Avoid turning Detailed Mode into a list of isolated formulas or a generic lecture unrelated to the task. The task should introduce the concept, and the concept should explain the implementation.
 
 ## Output
 
@@ -74,6 +88,7 @@ Do not stop solely because one item is unclear. Stop only when the task cannot b
 - Figures and printed metrics are produced when expected.
 - Markdown includes both code-level and mathematical explanations.
 - Markdown explanations are mainly Chinese, with important technical terms kept in English.
+- Detailed notebooks are lecture-style: each task introduces the concept before formulas and code.
 
 ## Avoid
 
