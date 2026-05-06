@@ -1,81 +1,80 @@
-﻿# Prompt: Write a Machine Learning Lab Report
+# Prompt: Write a Simple Machine Learning Lab Report
 
-Use this when writing a concise report for a machine-learning lab.
+Use this prompt when writing a concise Markdown report for a machine-learning lab. This is an auxiliary workflow; for lab solution creation, read `ipynb_solution.md` first unless the user explicitly requests a report-only task.
+
+## Purpose
+
+Create a short `report.md` that summarizes the lab tasks, core formulas, implementation approach, and available results. The report should be readable as a compact explanation of what the solution does.
+
+Do not directly modify the starter script unless the user explicitly requests script edits. Starter scripts such as `script_lab*.py` are read-only by default.
 
 ## Inputs to Read
 
-- `<LAB_DIR>/<SCRIPT_NAME>.py`: main implementation.
 - `<LAB_DIR>/<LAB_PDF_NAME>.pdf`: lab statement.
+- `<LAB_DIR>/<SCRIPT_NAME>.py`: starter script or implementation script.
+- Notebook solution files, if present.
 - `<LAB_DIR>/result.txt`: experiment numbers, if present.
-- `<LAB_DIR>/tuning_result.txt`: tuning results, if present.
-- `<TEMPLATE_DIR>/main.tex`: LaTeX template.
-- A previous lab report, if available, to match style.
+- Generated figures, if present.
 
 ## Workflow
 
 1. Inspect the lab directory and verify exact file names.
 2. Read the lab PDF and list the required tasks.
-3. Read the script and identify implemented functions, shapes, formulas, and numerical-stability choices.
-4. Read `result.txt` and `tuning_result.txt`. If outputs are missing and the script can run, run it to generate them.
-5. Copy the template `main.tex` to `<LAB_DIR>/report.tex`; do not modify the template original.
-6. Keep the template preamble, page limit, title/author format, and basic structure.
-7. Write the report in English and keep it short enough for the page limit.
+3. Read the starter script and identify required functions, signatures, shapes, formulas, and testing flow.
+4. If a notebook solution exists, read it as the primary implementation reference.
+5. Read `result.txt` or generated outputs when present. If outputs are missing, do not invent numbers.
+6. Write a concise Markdown report in English.
 
 ## Report Content
 
 For each task, include:
 
-- What was implemented.
-- The key formula or objective.
-- Important matrix/tensor shapes.
-- A short derivation for closed forms, gradients, coordinate updates, alternating steps, or multiplicative updates.
-- Important implementation choices and numerical-stability handling.
+- The implementation objective.
+- The key formula or algorithm.
+- Important matrix or tensor shapes.
+- A short note about numerical stability or implementation choices when relevant.
 
-For experiments:
+For experiments, include:
 
-- Quote actual numbers from `result.txt`.
-- Explain what matches expectation and what is surprising.
-- If a metric is misleading, explain why briefly.
+- Actual numeric results if available.
+- A brief interpretation of the results.
+- A note when expected outputs are missing or could not be verified.
 
-For tuning, if `tuning_result.txt` exists:
+## Output
 
-- State tuned parameters, candidate counts, total grid size, baseline setting, best setting, and best metric.
-- Mention runtime if recorded.
-- Add: `Full tables are saved in tuning_result.txt.`
-- If test metrics are used for tuning, note that a strict pipeline should use validation data.
+Create or update:
+
+- `<LAB_DIR>/report.md`
 
 ## Error Reporting
 
-If you run into missing files, unreadable content, OCR uncertainty, failed commands, missing dependencies, permission issues, or any other blocker, first try to continue with a reasonable fallback and complete as much of the requested output as possible.
+If you run into missing files, unreadable content, OCR uncertainty, unavailable outputs, failed commands, missing dependencies, or any other blocker, continue with a reasonable fallback when possible.
 
-Create or update a short issue report named `issues.md` in the working/output directory. Keep it concise and actionable:
+Create or update a short issue report named `issues.md` in the lab directory:
 
 ```md
 # Issues
 
 - Context: <file, problem, slide, cell, command, or task>
   Problem: <what went wrong>
-  Impact: <what part of the output may be incomplete or uncertain>
+  Impact: <what part of the report may be incomplete or uncertain>
   Fallback: <what you did to continue>
   Needs user: <yes/no; what input is needed if yes>
 ```
 
-Do not stop solely because one item is unclear. Stop only when the task cannot be completed safely or the missing information makes the whole output unreliable.
-
 ## Checklist
 
-- `report.tex` exists in the lab directory.
-- Template original was not modified.
-- No placeholders remain: `Question XX`, `Student Name`, `XXXX`, `Date of Submission`.
-- The report cites real result numbers.
-- Tuning is summarized when available.
-- LaTeX compiles if the local environment allows it; otherwise say source-level checks were completed.
+- `report.md` exists in the lab directory.
+- The starter script was not directly modified unless explicitly requested.
+- Required tasks are summarized.
+- Key formulas and shapes are included.
+- Actual results are quoted only when available.
+- Missing or unverified outputs are clearly marked.
 
 ## Avoid
 
+- Do not write a long LaTeX-style report.
 - Do not paste full code.
 - Do not add large tables.
 - Do not over-explain basic concepts.
-- Do not claim a finite-grid best setting is theoretically optimal.
-
-
+- Do not invent results.
