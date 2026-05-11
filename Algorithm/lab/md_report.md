@@ -68,5 +68,15 @@ Do not stop solely because one item is unclear. Stop only when the task cannot b
 - No template placeholders remain.
 - Required scripts/reports/results are present if submission includes programming.
 - The final package has a short README or manifest if requested.
+## Lab Implementation Style
+
+When the lab asks for an algorithm or data-structure implementation, prefer the minimal version needed to demonstrate the textbook method.
+
+- Implement the required algorithm directly; do not add broad engineering frameworks, generic libraries, benchmarking harnesses, or packaging code unless the task asks for them.
+- A small demonstration case is enough. Avoid long performance experiments unless the lab explicitly requires comparison or timing.
+- Keep the code clear and plain. Prefer simple control flow, ordinary structs/classes, and readable helper functions over overly abstract or complex designs.
+- Avoid unnecessary maintenance-only fields, validation layers, ownership frameworks, logging, and statistics counters that do not help explain the algorithm.
+- Add short Chinese comments at key textbook steps, such as partition, link, consolidate, cut, or dynamic-programming transition. Do not comment every line.
+- Reports should remain complete and useful: explain the implementation idea, key operations, complexity, compile command, and sample output. The minimal-implementation rule applies to code, not to removing necessary explanation from reports.
 
 
