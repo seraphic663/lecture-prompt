@@ -36,6 +36,8 @@ If the user does not specify a mode clearly, create both versions:
 
 Do not name any output file after this prompt file.
 
+After writing the solution `.tex` file(s), compile each one to PDF and check that it renders correctly. Delete auxiliary build artifacts such as `.aux`, `.log`, `.out`, `.toc`, `.synctex.gz`, `.fls`, and `.fdb_latexmk` after the check. Keep only the solution `.tex` and `.pdf` files, plus any concise `issues.md` if uncertainty remains.
+
 ## Solution Modes
 
 The user may not use the exact labels below. Infer the intended mode from meaning, tone, and wording.
@@ -112,6 +114,8 @@ A typical structure is:
 
 You may add minimal packages needed for mathematical formatting, tables, or simple figures, but keep the preamble restrained.
 
+Compile every generated solution source after writing it. The final deliverables for each solution mode are the `.tex` source and the corresponding `.pdf`; auxiliary build files should not remain in the output directory.
+
 ## Rules
 
 - Do not edit the original problem file.
@@ -125,6 +129,8 @@ You may add minimal packages needed for mathematical formatting, tables, or simp
 - If a problem asks for a tableau or tabular simplex derivation, include the tableau sequence explicitly.
 - If a problem asks for graphical analysis, identify the relevant corner points, feasible or infeasible status, objective values when needed, and final conclusion.
 - If a problem involves unrestricted-sign variables or reformulation, show the substitution clearly.
+- Compile the generated solution file(s) to PDF, inspect for obvious rendering or layout problems, and clean build artifacts afterward.
+- Leave only the final solution `.tex` and `.pdf` files as generated solution deliverables.
 
 ## Optimization-Specific Guidance
 
@@ -173,6 +179,7 @@ When reformulating a model:
 - Avoid vague phrases such as "obvious" when a calculation, pivot, or feasibility check is needed.
 - Keep notation and formatting consistent across all problems.
 - The final file should be suitable for study notes, checking work, or submission reference.
+- The final PDF should render cleanly, with readable formulas, tables, and page breaks.
 
 ## Error Reporting
 

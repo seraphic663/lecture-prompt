@@ -15,16 +15,19 @@ Do not modify the original PDF.
 
 Create one LaTeX source file for the homework statement.
 
-Use the homework root name as the output file name:
+Name the reconstructed print version as:
 
 ```text
-<root>.tex
+hwk<number>_print.tex
 ```
 
 Examples:
 
-- `hw2.pdf` -> `hw2.tex`
-- `2.pdf` -> `2.tex`
+- `hw2.pdf` -> `hwk2_print.tex`
+- `2.pdf` -> `hwk2_print.tex`
+- `homework_03.pdf` -> `hwk3_print.tex`
+
+Infer `<number>` from the homework number in the filename, parent folder, title, or PDF content. If these disagree, use the homework number shown in the PDF title and record the mismatch in `issues.md`.
 
 Do not name the output file after this prompt file.
 
@@ -42,8 +45,11 @@ Prefer semantic LaTeX structure over visual imitation of the PDF layout.
 2. Remove page numbers, OCR fragments, broken line wraps, and other PDF artifacts.
 3. Reconstruct the prose into normal sentences and paragraphs.
 4. Rebuild optimization models in proper LaTeX math environments.
-5. Keep the result minimal, clean, and directly compilable.
-6. If part of the PDF is unclear, mark the uncertainty in `issues.md` and use the least speculative reconstruction possible.
+5. Put each main problem on its own page by inserting `\newpage` between main `\item`s. A homework with $k$ main problems should produce exactly $k$ problem pages, excluding any unavoidable spillover caused by unusually long content.
+6. Keep the result minimal, clean, and directly compilable.
+7. Compile the reconstructed `.tex` file to PDF and check that it renders correctly.
+8. After the PDF has been checked, delete auxiliary build artifacts such as `.aux`, `.log`, `.out`, `.toc`, `.synctex.gz`, `.fls`, and `.fdb_latexmk`. Keep only the final `.tex` and `.pdf` files.
+9. If part of the PDF is unclear, mark the uncertainty in `issues.md` and use the least speculative reconstruction possible.
 
 ## Required Structure
 
@@ -62,6 +68,8 @@ Use a clean source structure similar to:
 
 \begin{enumerate}
 \item ...
+\newpage
+\item ...
 \end{enumerate}
 
 \end{document}
@@ -78,6 +86,7 @@ Adjust the title text, due date text, and content according to the actual PDF.
 - Put the homework label or title in bold.
 - Put the due date on its own line if the PDF presents it separately.
 - Use `enumerate` for the main problem list.
+- Insert `\newpage` between main problems so each main problem starts on a new page. Do not put `\newpage` after the final main problem.
 - Use nested `enumerate` for subproblems such as `(a)`, `(b)`, `(c)`.
 - Typeset optimization models in display math with `aligned` whenever the PDF presents an objective and multiple constraints.
 - Write the objective and constraints in a consistent form such as:
@@ -108,6 +117,8 @@ Adjust the title text, due date text, and content according to the actual PDF.
 - Do not add unnecessary macros, theorem environments, or packages.
 - Do not invent missing text. If something is unreadable or ambiguous, report it in `issues.md`.
 - Preserve the original problem order and subproblem order.
+- Compile the reconstructed source to PDF, inspect the result for obvious rendering problems, and clean build artifacts afterward.
+- Leave only `hwk<number>_print.tex` and `hwk<number>_print.pdf` as generated statement files, plus any concise `issues.md` if uncertainty remains.
 
 ## Style Constraints
 
@@ -116,6 +127,7 @@ Adjust the title text, due date text, and content according to the actual PDF.
 - Prefer standard LaTeX over clever shorthand.
 - The final result should look like plausible original course source, not an OCR transcript.
 - The file should compile directly in a standard LaTeX environment when the source content is complete.
+- The generated PDF should contain one main problem per page when the problem content fits on a page.
 
 ## Error Reporting
 
@@ -139,4 +151,4 @@ Do not stop solely because one symbol or sentence is unclear. Stop only when the
 
 The goal is to reconstruct the original homework statement as clean LaTeX, not to produce notes or solutions.
 
-The original PDF remains the source of truth. The new `<root>.tex` file is a reconstructed source version of the homework statement only.
+The original PDF remains the source of truth. The new `hwk<number>_print.tex` file is a reconstructed source version of the homework statement only.

@@ -34,9 +34,10 @@ Notebook explanations should be written mainly in Chinese, while keeping importa
 10. Do not create functions that do not exist in the starter script unless the user explicitly asks for extra helpers. Prefer writing small helper logic inline inside the required starter function. If an extra helper is absolutely unavoidable, stop and explain why before adding it.
 11. Do not change function names, argument names, default values, return types, or task semantics from the starter script. If the starter script has a misleading comment or docstring, correct the explanation around it rather than changing the contract.
 12. Do not add nonessential defensive code by default. If the starter/test flow already passes valid NumPy arrays and valid positive dimensions, avoid extra lines such as `np.asarray(..., dtype=float)`, `dim = max(int(dim), 1)`, clipping, or broad input sanitization. Add such guards only when the assignment requires them, the starter script already uses them, or a real failure in local verification proves they are needed.
-13. Keep the implementation close to a clean student submission: minimal, readable, and directly tied to the task. Prefer explaining assumptions in markdown over adding unnecessary defensive branches in code.
-14. End with a full testing cell that reproduces the starter script's intended execution path and saves expected figures or outputs.
-15. Run all cells if possible. If notebook execution is unavailable, validate the extracted code with a script or syntax check.
+13. Prefer simple positional calls when calling starter functions with arguments in their original signature order. Avoid unnecessary keyword arguments such as `k_mat = kernel(xs, k_type=k_type, bandwidth=bandwidth)` when `k_mat = kernel(xs, k_type, bandwidth)` is equally clear and matches the signature. Use keyword arguments only when they improve readability, skip optional parameters, or avoid ambiguity.
+14. Keep the implementation close to a clean student submission: minimal, readable, and directly tied to the task. Prefer explaining assumptions in markdown over adding unnecessary defensive branches in code.
+15. End with a full testing cell that reproduces the starter script's intended execution path and saves expected figures or outputs.
+16. Run all cells if possible. If notebook execution is unavailable, validate the extracted code with a script or syntax check.
 
 ## Detailed Mode Style
 
