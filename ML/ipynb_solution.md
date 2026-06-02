@@ -8,6 +8,8 @@ Create one or more `.ipynb` solution files from the lab statement and starter sc
 
 Do not directly modify the starter script unless the user explicitly requests script edits. Starter scripts such as `script_lab*.py` are read-only by default. The notebook may include complete implementations of the required functions, but the original script file should remain unchanged.
 
+Exception for final submission: if the assignment or user asks for runnable `.py` files, copy the completed TODO implementations into the original `script_lab*.py` after the notebook solution is verified. Preserve imports, function signatures, helper functions, main execution flow, dependency restrictions, and output filenames. If the user wants to keep a blank starter copy for self-practice, first copy the original script to a name such as `script_lab10_starter.py` and leave TODO blocks unchanged in that copy.
+
 Notebook explanations should be written mainly in Chinese, while keeping important technical terms in English when they are standard course vocabulary, such as Kernel PCA, Lasso, ISTA, K-NN graph, Laplacian Eigenmaps, covariance, eigenvalue, and bandwidth. Code identifiers, file names, function names, and required output names should remain unchanged.
 
 ## Inputs to Read
@@ -16,6 +18,7 @@ Notebook explanations should be written mainly in Chinese, while keeping importa
 - Starter script, if present.
 - Existing notebook or rebuild script, if present.
 - Result files, generated figures, or previous outputs, if present.
+- Original lab zip or starter copy, if available, for final `.py` comparison.
 
 ## Workflow
 
@@ -38,6 +41,8 @@ Notebook explanations should be written mainly in Chinese, while keeping importa
 14. Keep the implementation close to a clean student submission: minimal, readable, and directly tied to the task. Prefer explaining assumptions in markdown over adding unnecessary defensive branches in code.
 15. End with a full testing cell that reproduces the starter script's intended execution path and saves expected figures or outputs.
 16. Run all cells if possible. If notebook execution is unavailable, validate the extracted code with a script or syntax check.
+17. For final `.py` submissions, sync implementations into the starter script only after preserving a starter copy when requested.
+18. If original zips are available, compare the completed script against the original and confirm edits are limited to student info plus TODO implementation regions.
 
 ## Detailed Mode Style
 
@@ -102,6 +107,8 @@ Produce one or more of the following depending on the requested mode:
 - Single requested Detailed Mode: `<LAB_DIR>/<lab>_solution.ipynb` and, if useful, `<LAB_DIR>/rebuild_<lab>_solution.py`.
 - No clear mode or both requested: `<LAB_DIR>/<lab>_solution_concise.ipynb`, `<LAB_DIR>/<lab>_solution_detailed.ipynb`, and matching rebuild scripts if useful.
 - Generated figures or result files when the notebook is expected to produce them.
+- Completed `script_lab*.py` only when the assignment or user requires runnable Python scripts.
+- Optional `script_lab*_starter.py` copy when the user wants to keep TODOs for self-practice.
 
 If a rebuild script already exists, prefer updating it so the notebook can be regenerated. If no rebuild script exists, create one only when it materially improves reproducibility or verification.
 
@@ -126,6 +133,8 @@ Do not stop solely because one item is unclear. Stop only when the task cannot b
 ## Checklist
 
 - The starter script was not directly modified unless explicitly requested.
+- If a final `.py` file was required, only TODO implementation regions and student info were changed.
+- If requested, a starter copy preserving TODOs was created.
 - All required functions are present in the notebook.
 - No extra functions are introduced unless explicitly requested.
 - Function signatures match the starter script.
